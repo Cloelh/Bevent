@@ -19,7 +19,6 @@
                     'id_cat' => $idCat,
                     'resolue' => $resolue
                 ]);
-                echo "ok";
                 header("Location: index.php?action=home");
             } else {
                 $message = "titre trop long";

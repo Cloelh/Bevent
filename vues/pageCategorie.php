@@ -1,5 +1,4 @@
 <?php
-
     if(isset($_GET['idCat'])) {
         $idCat = $_GET['idCat'];
         $getCat = $bdd->prepare('SELECT * FROM `cat` WHERE `id`=:id');
@@ -14,7 +13,6 @@
         ]);
         $nbSujet = $getSujet->rowCount();
     }
-
 ?>
 
 
