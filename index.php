@@ -4,6 +4,9 @@
     include('config/bdd.php');
     session_start();
 
+    $getCat = $bdd->prepare('SELECT * FROM cat');
+    $getCat->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +27,11 @@
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php } else { ?>
             <a href="index.php? action=connexion">Se connecter</a>
+        <?php } ?>
+    </nav>
+    <nav class="navbar list-categorie d-flex justify-content-around">
+        <?php while($c = $getCat->fetch()){ ?>
+            <a href="action=pageCategorie&idCat=<?=$c['id']?>"><?=$c['categorie']?></a>
         <?php } ?>
     </nav>
 

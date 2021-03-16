@@ -1,4 +1,4 @@
-<div class="login d-flex justify-content-center align-items-center">
+<div class="login d-flex justify-content-center align-items-center bgViolet">
     <div class="connexion bg-dark light">
         <h2>Connexion</h2>
         <?php
