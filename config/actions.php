@@ -20,7 +20,8 @@ $listeDesActions = array(
     "newCommentaire" => "traitement/newCommentaire.php",   
     "deleteCom" => "traitement/deleteCom.php",
     "deleteSujet" => "traitement/deleteSujet.php",
-    "deleteCat" => "traitement/deleteCat.php" 
+    "deleteCat" => "traitement/deleteCat.php",
+    "addCat" => "traitement/addCat.php"
 )
 
 ?>

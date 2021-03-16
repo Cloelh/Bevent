@@ -42,7 +42,7 @@ button{border: none; min-width: 100px;}
        margin-left: 10px;
     }
 
-h2{
+h2, h4{
     font-family: 'Viga', sans-serif;
     color: #4B36AC;
     text-transform: uppercase;
