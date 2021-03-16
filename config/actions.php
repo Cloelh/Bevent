@@ -8,12 +8,14 @@ $listeDesActions = array(
     "connexion" => "vues/connexion.php",
     "myPost" => "vues/myPost.php",
     "createPost" => "vues/createPost.php",
+    "pageSujet" => "vues/pageSujet.php",
 
     //traitement
     "register" => "traitement/register.php",
     "login" => "traitement/login.php",
     "logout" => "traitement/logout.php",
     "newPost" => "traitement/newPost.php",
+    "newCommentaire" => "traitement/newCommentaire"
 )
 
 ?>

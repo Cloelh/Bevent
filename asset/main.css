@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -18,7 +20,7 @@
 .bgViolet{ background-color: #4B36AC; }
 .light{color: #ededed;}
 
-a{color: black; text-decoration: none;}
+a{color: black; text-decoration: none !important;}
 button{border: none; min-width: 100px;}
 .button{
     background-color: #4B36AC;
@@ -49,6 +51,7 @@ nav.list-categorie{
     box-shadow: 0px 5px 25px rgba(0, 0, 0, .25);
 }
     nav.list-categorie a{
+        font-family: 'Viga', sans-serif;
         color: white;
         text-transform: uppercase;
         font-size: 1.2em;
@@ -95,4 +98,43 @@ nav.list-categorie{
 /* newPost */
 .newPost input, .newPost select, .newPost textarea{
     border-color: #4B36AC;
+}
+
+/* sujet */
+.sujetText H4 a {
+    font-family: 'Viga', sans-serif;
+    color: #4B36AC;
+    text-transform: uppercase;
+}
+
+/* pageSujet */ 
+.pageSujet h2{
+    font-family: 'Viga', sans-serif;
+    color: #4B36AC;
+    text-transform: uppercase;
+}
+
+
+/* etiquette */
+span a{
+    color: white;
+    transition: color .2s ease;
+}
+
+span a:hover{
+    color: silver;
+}
+
+
+span.categorie{
+    background-color: #4B36AC;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+
+span.valider{
+    background-color: darkgreen;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
 }
