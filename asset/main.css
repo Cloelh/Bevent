@@ -14,3 +14,38 @@
 
 .violet{ color: #4B36AC; }
 .bgViolet{ color: #4B36AC; }
+.light{color: #ededed;}
+
+a{color: black; text-decoration: none;}
+
+/* Login */
+.login{
+    height: 100vh;
+   background-color: #4B36AC;
+}
+
+    .connexion, .inscription{
+        width: 400px;
+        height: 500px;
+        padding: 30px !important;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+        .connexion input, .inscription input{
+            background-color: #171717;
+            color: #ededed;
+            border: #4B36AC 1px solid;
+            margin-bottom: 10px;
+        }
+
+        .connexion .btn, .inscription .btn{
+            background-color: #ededed !important;
+            color: #4B36AC !important;
+            border-color: #4B36AC !important;
+        }
+        .connexion .btn:hover, .inscription .btn:hover{
+            color: #ededed !important;
+            background-color: #4B36AC !important;
+            border-color: #4B36AC !important;
+        }
