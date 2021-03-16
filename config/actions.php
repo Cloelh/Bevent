@@ -17,7 +17,8 @@ $listeDesActions = array(
     "logout" => "traitement/logout.php",
     "newPost" => "traitement/newPost.php",    
     "newCommentaire" => "traitement/newCommentaire.php",   
-    "deleteCom" => "traitement/deleteCom.php" 
+    "deleteCom" => "traitement/deleteCom.php",
+    "deleteSujet" => "traitement/deleteSujet.php" 
 )
 
 ?>
