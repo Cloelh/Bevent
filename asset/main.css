@@ -42,7 +42,11 @@ button{border: none; min-width: 100px;}
        margin-left: 10px;
     }
 
-
+h2{
+    font-family: 'Viga', sans-serif;
+    color: #4B36AC;
+    text-transform: uppercase;
+}
 
 
 /* nav */
@@ -107,12 +111,6 @@ nav.list-categorie{
     text-transform: uppercase;
 }
 
-/* pageSujet */ 
-.pageSujet h2{
-    font-family: 'Viga', sans-serif;
-    color: #4B36AC;
-    text-transform: uppercase;
-}
 
 
 /* etiquette */

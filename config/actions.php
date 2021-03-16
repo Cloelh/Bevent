@@ -9,6 +9,7 @@ $listeDesActions = array(
     "myPost" => "vues/myPost.php",
     "createPost" => "vues/createPost.php",
     "pageSujet" => "vues/pageSujet.php",
+    "pageCategorie" => "vues/pageCategorie.php",
 
     //traitement
     "register" => "traitement/register.php",

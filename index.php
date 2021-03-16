@@ -31,7 +31,7 @@
     </nav>
     <nav class="navbar list-categorie d-flex justify-content-around">
         <?php while($c = $getCat->fetch()){ ?>
-            <a href="action=pageCategorie&idCat=<?=$c['id']?>"><?=$c['categorie']?></a>
+            <a href="index.php?action=pageCategorie&idCat=<?=$c['id']?>"><?=$c['categorie']?></a>
         <?php } ?>
     </nav>
 
