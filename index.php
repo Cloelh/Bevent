@@ -24,6 +24,11 @@
     <nav class="navbar d-flex justify-content-around">
         <a href="index.php?action=home"><img src="images/logo.svg" alt="logo" width="200px"></a>
         <?php if(isset($_SESSION['id'])){ ?>
+            <?php if($_SESSION['role'] == 'admin') { ?>
+                <a href="index.php?action=admin">Admin</a>
+            <?php } else { ?>
+                <a href="index.php?action=mySujet">Mes sujets</a>
+            <?php } ?>
             <a href="index.php?action=logout">Se déconnecter</a>
         <?php } else { ?>
             <a href="index.php? action=connexion">Se connecter</a>

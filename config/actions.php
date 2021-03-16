@@ -6,7 +6,8 @@ $listeDesActions = array(
     "" => "vues/home.php",
     "home" => "vues/home.php",
     "connexion" => "vues/connexion.php",
-    "myPost" => "vues/myPost.php",
+    "mySujet" => "vues/mySujet.php",
+    "admin" => "vues/admin.php",
     "createPost" => "vues/createPost.php",
     "pageSujet" => "vues/pageSujet.php",
     "pageCategorie" => "vues/pageCategorie.php",
@@ -18,7 +19,8 @@ $listeDesActions = array(
     "newPost" => "traitement/newPost.php",    
     "newCommentaire" => "traitement/newCommentaire.php",   
     "deleteCom" => "traitement/deleteCom.php",
-    "deleteSujet" => "traitement/deleteSujet.php" 
+    "deleteSujet" => "traitement/deleteSujet.php",
+    "deleteCat" => "traitement/deleteCat.php" 
 )
 
 ?>
