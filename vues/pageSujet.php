@@ -1,17 +1,28 @@
+<!-- 
+    Page sujet : visualisation d'un sujet sélécionné grace à son id 
+        => on peut y poser des commentaires et retrouver sa catégorie 
+ -->
+
 <?php
 
     if(isset($_GET['idSujet'])){
         $idSujet = $_GET['idSujet'];
-        $getSujet = $bdd->prepare('SELECT * FROM `sujet` INNER JOIN cat ON sujet.id_cat = cat.id WHERE sujet.id = :id');
+        // selection du sujet séléctionné en récupérant sa catégorie et son auteur
+        $getSujet = $bdd->prepare('SELECT * FROM `sujet` 
+            INNER JOIN cat ON sujet.id_cat = cat.id 
+            INNER JOIN user ON sujet.id_user = user.id 
+            WHERE sujet.id = :id');
         $getSujet->execute([
             'id' => $idSujet
         ]);
         $sujet = $getSujet->fetch();
 
+        // selection des commentaires avec pour id_sujet l'id du sujet selectionné 
         $getCom = $bdd->prepare('SELECT * FROM `commentaires` WHERE `id_sujet`=:id_sujet ORDER BY `id` DESC');
         $getCom->execute([
             'id_sujet' => $idSujet
         ]);
+        // nombre de commentaires du sujet
         $nbCom = $getCom->rowCount();
     }
 
@@ -27,8 +38,7 @@
             <?php } else {?>
                 <h2><?=$sujet['titre']?></h2>
             <?php } ?>
-            
-            
+            <p><i>Auteur : <?=$sujet['pseudo']?></i></p>
             <p><?=$sujet['contenu']?></p>
             <!-- TODO : faire en sorte que la redirection au formulaire fonctionne -->
             <a class="button d-flex align-items-center justify-content-center" href="#commenter">Répondre<img src="images/bulle.svg" alt="pen" width="20px"></a>
@@ -80,7 +90,7 @@
                 </form>
             </div>
         <?php } else { ?>
-            <p>Vous devez être connecter pour poster ! <a href="?action=connexion">Se connecter maintenant :)</a></p>
+            <p class="mt-4">Vous devez être connecter pour laisser un message ! <a href="?action=connexion">Se connecter maintenant :)</a></p>
             <div id="commenter" class="commenter border border-1 p-3">
                 <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
                     <div class="mb-3">

@@ -6,6 +6,16 @@
     font-family: Helvetica, sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+    margin-right: 2px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background:#4B36AC;
+    border-radius: 20px;  
+  }
+
 
 
 /* OOCSS */

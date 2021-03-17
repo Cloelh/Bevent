@@ -33,7 +33,7 @@
     <div class="feed col-8 p-5">
     <h2 class="mb-4"><?=$cat['categorie']?></h2>
     <p><?=$cat['def']?></p>
-        <a class="button d-flex align-items-center justify-content-center" href="index.php?action=createPost">Poser votre question sur le theme : <?=$cat['categorie']?><img src="images/pen.svg" alt="pen" width="20px"></a>
+        <a class="button d-flex align-items-center justify-content-center" href="index.php?action=createPost&idCat=<?=$cat['id']?>">Poser votre question sur le theme : <?=$cat['categorie']?><img src="images/pen.svg" alt="pen" width="20px"></a>
         
         <div class="mt-5">
             <div class="d-flex justify-content-between">

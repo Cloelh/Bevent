@@ -8,6 +8,12 @@
     $getCat = $bdd->prepare('SELECT * FROM cat');
     $getCat->execute();
 
+    // si une catégorie à déjà été choisit par l'user, pour ensuite le mettre en selected dans le select du formulaire
+    if(isset($_GET['idCat'])){
+        $cat = true;
+        $idCat = $_GET['idCat'];
+    }
+
 ?>
 
 <div class="newPost marge page d-flex">
@@ -26,7 +32,11 @@
                 <select class="form-select" name="cat" id="cat">
                     <option selected>Choisir une catégorie</option>
                     <?php while ($c = $getCat->fetch()){  ?>
-                        <option value="<?=$c['id']?>"><?=$c['categorie']?></option>
+                        <?php if($cat AND $idCat == $c['id']) { ?>
+                            <option selected="selected" value="<?=$c['id']?>"><?=$c['categorie']?></option>
+                        <?php } else { ?>
+                            <option value="<?=$c['id']?>"><?=$c['categorie']?></option>
+                        <?php } ?>
                     <?php } ?>  
                 </select>
             </div>
