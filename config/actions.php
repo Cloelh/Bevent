@@ -21,7 +21,8 @@ $listeDesActions = array(
     "deleteCom" => "traitement/deleteCom.php",
     "deleteSujet" => "traitement/deleteSujet.php",
     "deleteCat" => "traitement/deleteCat.php",
-    "addCat" => "traitement/addCat.php"
+    "addCat" => "traitement/addCat.php",
+    "deleteUser" => "traitement/deleteUser.php"
 )
 
 ?>

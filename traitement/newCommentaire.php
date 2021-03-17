@@ -26,6 +26,7 @@ echo $_GET['idSujet'];
         header("Location: index.php?action=pageSujet&idSujet=".$idSujet);
     }   else {
         echo "erreur";
+        // TODO
         // $message = "erreur";
         // header("Location: index.php?action=pageSujet&idSujet=".$$idSujet."&messageCom=".$message);
     }
