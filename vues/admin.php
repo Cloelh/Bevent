@@ -15,7 +15,7 @@
 
 ?>
 
-<div class="admin marge">
+<div class="admin marge page p-3">
 
     <h1>Admin page</h1>
     <!-- Liste des catégories  -->

@@ -17,12 +17,18 @@
 
 ?>
 
-<div class="pageSujet marge d-flex">
-    <div class="col-8 border border-1 p-5">
+<div class="pageSujet page marge d-flex">
+    <div class="col-8 p-5">
         <span class="categorie"><a href="index.php?action=pageCategorie&idCat=<?=$sujet['id_cat']?>"><?=$sujet['categorie']?></a></span>
         
         <div class="sujet border border-1 p-3">
-            <h2><?=$sujet['titre']?></h2>
+            <?php if($sujet['resolue'] == 1) {?>
+                <h2><img class="me-2" src="images/check.svg" width="40px" alt="chech"><?=$sujet['titre']?>  </h2>
+            <?php } else {?>
+                <h2><?=$sujet['titre']?></h2>
+            <?php } ?>
+            
+            
             <p><?=$sujet['contenu']?></p>
             <!-- TODO : faire en sorte que la redirection au formulaire fonctionne -->
             <a class="button d-flex align-items-center justify-content-center" href="#commenter">Répondre<img src="images/bulle.svg" alt="pen" width="20px"></a>

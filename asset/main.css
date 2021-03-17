@@ -12,12 +12,13 @@
 .marge{
     margin-left: 200px;
     margin-right: 200px;
-    margin-top: 50px;
+    margin-top: 200px;
     margin-bottom: 50px;
 }
 
 .violet{ color: #4B36AC; }
 .bgViolet{ background-color: #4B36AC; }
+.border-violet{border: #4B36AC 5px solid !important;}
 .light{color: #ededed;}
 
 a{color: black; text-decoration: none !important;}
@@ -46,6 +47,10 @@ h2, h4{
     font-family: 'Viga', sans-serif;
     color: #4B36AC;
     text-transform: uppercase;
+}
+
+.page{
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, .30);
 }
 
 

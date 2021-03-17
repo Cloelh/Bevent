@@ -15,30 +15,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Voyages</title>
+    <title>MyForum</title>
     <link rel="stylesheet" href="asset/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
 
-    <nav class="navbar d-flex justify-content-around">
-        <a href="index.php?action=home"><img src="images/logo.svg" alt="logo" width="200px"></a>
-        <?php if(isset($_SESSION['id'])){ ?>
-            <?php if($_SESSION['role'] == 'admin') { ?>
-                <a href="index.php?action=admin">Admin</a>
+   <div class="fixed-top">
+    <nav class="navbar d-flex justify-content-around bg-light">
+            <a href="index.php?action=home"><img src="images/logo.svg" alt="logo" width="200px"></a>
+            <?php if(isset($_SESSION['id'])){ ?>
+                <?php if($_SESSION['role'] == 'admin') { ?>
+                    <a href="index.php?action=admin">Admin</a>
+                <?php } else { ?>
+                    <a href="index.php?action=mySujet">Mes sujets</a>
+                <?php } ?>
+                <a href="index.php?action=logout">Se déconnecter</a>
             <?php } else { ?>
-                <a href="index.php?action=mySujet">Mes sujets</a>
+                <a href="index.php? action=connexion">Se connecter</a>
             <?php } ?>
-            <a href="index.php?action=logout">Se déconnecter</a>
-        <?php } else { ?>
-            <a href="index.php? action=connexion">Se connecter</a>
-        <?php } ?>
-    </nav>
-    <nav class="navbar list-categorie d-flex justify-content-around">
-        <?php while($c = $getCat->fetch()){ ?>
-            <a href="index.php?action=pageCategorie&idCat=<?=$c['id']?>"><?=$c['categorie']?></a>
-        <?php } ?>
-    </nav>
+        </nav>
+        <nav class="navbar list-categorie d-flex justify-content-around">
+            <?php while($c = $getCat->fetch()){ ?>
+                <a href="index.php?action=pageCategorie&idCat=<?=$c['id']?>"><?=$c['categorie']?></a>
+            <?php } ?>
+        </nav>
+    </div>
 
     <div>
         <div>

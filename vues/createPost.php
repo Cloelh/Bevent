@@ -5,8 +5,8 @@
 
 ?>
 
-<div class="newPost marge d-flex">
-    <div class="addPost col-8 border border-1 p-5">
+<div class="newPost marge page d-flex">
+    <div class="addPost col-8 p-5">
         <form class="col-12" method="post" action="index.php?action=newPost">
             <div class="mb-3">
                 <label for="postTitle" class="form-label">Titre du post</label>
