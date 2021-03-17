@@ -11,6 +11,7 @@ $listeDesActions = array(
     "createPost" => "vues/createPost.php",
     "pageSujet" => "vues/pageSujet.php",
     "pageCategorie" => "vues/pageCategorie.php",
+    "search" => "vues/search.php",
 
     //traitement
     "register" => "traitement/register.php",
@@ -23,7 +24,7 @@ $listeDesActions = array(
     "deleteCat" => "traitement/deleteCat.php",
     "addCat" => "traitement/addCat.php",
     "deleteUser" => "traitement/deleteUser.php",
-    "postResolue" => "traitement/postResolue.php"
+    "postResolue" => "traitement/postResolue.php",
 )
 
 ?>

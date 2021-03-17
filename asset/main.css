@@ -21,7 +21,9 @@
 .border-violet{border: #4B36AC 5px solid !important;}
 .light{color: #ededed;}
 
-a{color: black; text-decoration: none !important;}
+a{text-decoration: none !important;}
+a.link{color: #4B36AC;}
+a.link:hover{color: #180b4e;}
 button{border: none; min-width: 100px;}
 .button{
     background-color: #4B36AC;
@@ -151,4 +153,15 @@ span.suppression{
     width: 140px;
     display: flex;
     justify-content: center;
+}
+
+
+/* search */
+.search form input {
+    border: none;
+    background: transparent;
+}
+.search form button {
+    border: none;
+    background: transparent;
 }

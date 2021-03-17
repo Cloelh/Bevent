@@ -1,4 +1,9 @@
 <?php
+    // l'utilisateur doit être connecté pour accéder à cette page 
+    if(!isset($_SESSION['id'])){
+        $message = "Vous devez être connecté pour poster !";
+        header("Location: index.php?action=connexion&messageConnexion=".$message);
+    }
 
     $getCat = $bdd->prepare('SELECT * FROM cat');
     $getCat->execute();

@@ -65,18 +65,34 @@
             <?php } ?>
         </div>
 
-        <div id="commenter" class="commenter border border-1 p-3">
-            <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
-                <div class="mb-3">
-                    <label for="comment">Repondre : </label>
-                    <input class="form-control" type="text" name="comment" id="comment">
-                </div>
-                <button type="submit" class="btn btn-primary">Envoyer la réponse</button>
-                <?php if(isset($_GET['messageCom'])){ ?>
-                    <p class="messageErreur"><?=$_GET['messageCom']?></p>
-                <?php } ?>
-            </form>
-        </div>
+        <!-- il faut être connecté pour poster un commentaire -->
+        <?php if(isset($_SESSION['id'])){ ?>
+            <div id="commenter" class="commenter border border-1 p-3">
+                <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
+                    <div class="mb-3">
+                        <label for="comment">Repondre : </label>
+                        <input class="form-control" type="text" name="comment" id="comment">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer la réponse</button>
+                    <?php if(isset($_GET['messageCom'])){ ?>
+                        <p class="messageErreur"><?=$_GET['messageCom']?></p>
+                    <?php } ?>
+                </form>
+            </div>
+        <?php } else { ?>
+            <p>Vous devez être connecter pour poster ! <a href="?action=connexion">Se connecter maintenant :)</a></p>
+            <div id="commenter" class="commenter border border-1 p-3">
+                <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
+                    <div class="mb-3">
+                        <label for="comment">Repondre : </label>
+                        <input disabled="disabled" class="form-control" type="text" name="comment" id="comment">
+                    </div>
+                    <button disabled="disabled" type="submit" class="btn btn-primary">Envoyer la réponse</button>
+                </form>
+            </div>
+        <?php } ?>
+
+        
     </div>
     
     <?php include('include/sidebar.php') ?>

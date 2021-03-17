@@ -24,15 +24,25 @@
    <div class="fixed-top">
     <nav class="navbar d-flex justify-content-around bg-light">
             <a href="index.php?action=home"><img src="images/logo.svg" alt="logo" width="200px"></a>
+            <div class="search border border-1 p-2 rounded-pill">
+
+
+                <form action="?action=search" method="POST">
+                    <input type="text" id="contenuSearch" name="contenuSearch" class="contenuSearch" placeholder="Rechercher">
+                    <button type="submit"><img src="images/search.svg" alt="search" width="30px"></button>
+                </form>
+
+
+            </div>
             <?php if(isset($_SESSION['id'])){ ?>
                 <?php if($_SESSION['role'] == 'admin') { ?>
                     <a href="index.php?action=admin">Admin</a>
                 <?php } else { ?>
-                    <a href="index.php?action=mySujet">Mes sujets</a>
+                    <a class="link" href="index.php?action=mySujet">Mes sujets</a>
                 <?php } ?>
-                <a href="index.php?action=logout">Se déconnecter</a>
+                <a class="link" href="index.php?action=logout">Se déconnecter</a>
             <?php } else { ?>
-                <a href="index.php? action=connexion">Se connecter</a>
+                <a class="link" href="index.php?action=connexion">Se connecter</a>
             <?php } ?>
         </nav>
         <nav class="navbar list-categorie d-flex justify-content-around">

@@ -39,9 +39,9 @@
             <div class="d-flex justify-content-between">
                 <div class="resultatNb"><?=$nbSujet?> résultat(s)</div>
                 <?php if(isset($_GET['actionResolue']) AND $_GET['actionResolue'] == true) { ?>
-                    <div class="resolue"><a href="?action=pageCategorie&idCat=<?=$idCat?>">voir tous les sujets </a></div>
+                    <div><a class="link" href="?action=pageCategorie&idCat=<?=$idCat?>">voir tous les sujets </a></div>
                 <?php } else { ?>
-                    <div class="resolue"><a href="?action=pageCategorie&actionResolue=true&idCat=<?=$idCat?>">ne voir que les sujets résolues</a></div>
+                    <div><a class="link" href="?action=pageCategorie&actionResolue=true&idCat=<?=$idCat?>">ne voir que les sujets résolues</a></div>
                 <?php  } ?>
             </div>
             <?php while($s = $getSujet->fetch()){ ?>
