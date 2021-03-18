@@ -175,3 +175,20 @@ span.suppression{
     border: none;
     background: transparent;
 }
+
+
+
+
+
+
+/* sidebar */
+.newsletter button{
+    background-color: transparent;
+}
+.pub1{
+    background: url('https://labo.fnac.com/wp-content/uploads/2021/03/Intel-11th_Gen-Core-desktop-1-650x455.jpg');
+    background-size: cover;
+    background-position: center;
+    content:" ";
+    height: 200px;
+}

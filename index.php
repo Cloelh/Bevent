@@ -25,14 +25,12 @@
     <nav class="navbar d-flex justify-content-around bg-light">
             <a href="index.php?action=home"><img src="images/logo.svg" alt="logo" width="200px"></a>
             <div class="search border border-1 p-2 rounded-pill">
-
-
                 <form action="?action=search" method="POST">
-                    <input type="text" id="contenuSearch" name="contenuSearch" class="contenuSearch" placeholder="Rechercher">
-                    <button type="submit"><img src="images/search.svg" alt="search" width="30px"></button>
+                    <div class="form-group">
+                        <input type="text" id="contenuSearch" name="contenuSearch" class="contenuSearch" placeholder="Rechercher">
+                        <button type="submit"><img src="images/search.svg" alt="search" width="30px"></button>
+                    </div>
                 </form>
-
-
             </div>
             <?php if(isset($_SESSION['id'])){ ?>
                 <?php if($_SESSION['role'] == 'admin') { ?>

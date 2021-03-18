@@ -101,8 +101,6 @@
                 </form>
             </div>
         <?php } ?>
-
-        
     </div>
     
     <?php include('include/sidebar.php') ?>
