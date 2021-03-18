@@ -16,8 +16,6 @@ body::-webkit-scrollbar {
     border-radius: 20px;  
   }
 
-
-
 /* OOCSS */
 .marge{
     margin-left: 200px;
@@ -175,10 +173,6 @@ span.suppression{
     border: none;
     background: transparent;
 }
-
-
-
-
 
 
 /* sidebar */

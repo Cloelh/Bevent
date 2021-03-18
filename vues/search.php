@@ -37,6 +37,8 @@
         // header("Location: index.php?action=home");
     }
 
+    include('include/nav.php');
+
 ?>
 
     <div class="d-flex">

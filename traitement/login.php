@@ -1,3 +1,5 @@
+<div class="page marge">
+
 <?php
     if(
         !empty($_POST['pseudo']) AND isset($_POST['pseudo']) AND
@@ -21,6 +23,7 @@
                 $_SESSION['mdp'] = $userInfo['mdp'];
                 $_SESSION['role'] = $userInfo['role'];
                 header("Location: index.php?action=home");
+                exit;
             } else {
                 $message = "mauvais mot de passe";
                 header("Location: index.php?action=connexion&messageConnexion=".$message);
@@ -35,3 +38,5 @@
     }
 
 ?>
+
+</div>  

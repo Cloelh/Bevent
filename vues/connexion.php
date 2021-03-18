@@ -1,7 +1,12 @@
 <!-- si l'utilisateur est déjà connecté, on le renvoie à la homePage -->
 <?php if(isset($_SESSION['id'])){
     header("Location: index.php?action=home");
-} ?>
+
+    
+} 
+
+include('include/nav.php');
+?>
 
 <div class="login d-flex justify-content-center align-items-center bgViolet pt-5">
     <div class="connexion bg-dark light">

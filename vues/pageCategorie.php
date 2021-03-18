@@ -25,6 +25,8 @@
         
         $nbSujet = $getSujet->rowCount();
     }
+
+    include('include/nav.php');
 ?>
 
 

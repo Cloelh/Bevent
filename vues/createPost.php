@@ -5,8 +5,8 @@
         header("Location: index.php?action=connexion&messageConnexion=".$message);
     }
 
-    $getCat = $bdd->prepare('SELECT * FROM cat');
-    $getCat->execute();
+    $test = $bdd->prepare('SELECT * FROM cat');
+    $test->execute();
 
     // si une catégorie à déjà été choisit par l'user, pour ensuite le mettre en selected dans le select du formulaire
     if(isset($_GET['idCat'])){
@@ -15,6 +15,8 @@
     }
 
 ?>
+
+<?php include('include/nav.php'); ?>
 
 <div class="newPost marge page d-flex">
     <div class="addPost col-8 p-5">
@@ -31,11 +33,11 @@
                 <label for="cat">Catégorie</label>
                 <select class="form-select" name="cat" id="cat">
                     <option selected>Choisir une catégorie</option>
-                    <?php while ($c = $getCat->fetch()){  ?>
-                        <?php if($cat AND $idCat == $c['id']) { ?>
-                            <option selected="selected" value="<?=$c['id']?>"><?=$c['categorie']?></option>
+                    <?php while ($t = $test->fetch()){  ?>
+                        <?php if($cat AND $idCat == $t['id']) { ?>
+                            <option selected="selected" value="<?=$t['id']?>"><?=$t['categorie']?></option>
                         <?php } else { ?>
-                            <option value="<?=$c['id']?>"><?=$c['categorie']?></option>
+                            <option value="<?=$t['id']?>"><?=$t['categorie']?></option>
                         <?php } ?>
                     <?php } ?>  
                 </select>

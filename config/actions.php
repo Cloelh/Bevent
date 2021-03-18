@@ -25,6 +25,7 @@ $listeDesActions = array(
     "addCat" => "traitement/addCat.php",
     "deleteUser" => "traitement/deleteUser.php",
     "postResolue" => "traitement/postResolue.php",
+    "changeAvatar" => "traitement/changeAvatar.php",
 )
 
 ?>

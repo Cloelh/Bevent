@@ -10,14 +10,15 @@
         ]);
     } else {
         // sinon on affiche tous les sujets 
-        $getSujet = $bdd->prepare('SELECT * FROM `sujet` ORDER BY `id` DESC');
+        $getSujet = $bdd->prepare('SELECT * FROM `sujet` 
+        INNER JOIN `cat` ON `sujet`.`id_cat` = `cat`.`id`
+        INNER JOIN `user` ON `sujet`.`id_user` = `user`.`id`
+        ORDER BY `sujet`.`id` DESC');
         $getSujet->execute();
     }
-
-    
-
     $nbSujet = $getSujet->rowCount();
     
+    include('include/nav.php');
 ?>
 
 
@@ -40,16 +41,8 @@
                 <?php } else { ?>
                 <div class="post d-flex justify-content-between mb-5 border-violet p-3">
                 <?php } ?>
-                
-                    <?php
-                    // TODO INNER JOIN ON 
-                        $idCat = $s['id_cat'];
-                        $catPost = $bdd->prepare('SELECT * FROM cat WHERE id=?');
-                        $catPost->execute(array($idCat));
-                        $cat = $catPost->fetch();
-                    ?>
-                    <div class="post d-flex align-items-start col-8">
-                        <img src="images/user.svg" alt="user" class="me-2" width="40px">
+                    <div class="post d-flex align-items-start col-10">
+                        <img src="images/user/<?=$s['idUserProfil']?>.svg" alt="user" class="me-2" width="50px">
                         <div class="sujetText">
                             <h4><a href="index.php?action=pageSujet&idSujet=<?=$s['id']?>"><?=$s['titre']?></a></h4>
                             <?php if(strlen($s['contenu']) > 150) { ?>
@@ -57,10 +50,10 @@
                             <?php } else { ?>
                                 <p><?=$s['contenu']?></p>
                             <?php } ?>
-                            <span class="categorie"><a href="index.php?action=pageCategorie&idCat=<?=$cat['id']?>"><?=$cat['categorie']?></a></span>
+                            <span class="categorie"><a href="index.php?action=pageCategorie&idCat=<?=$s['id']?>"><?=$s['categorie']?></a></span>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center justify-content-end col-4">
+                    <div class="d-flex align-items-center justify-content-end col-2">
                         <?php if($s['resolue'] == 1) { ?>
                             <span class="p-3 d-flex align-items-center justify-content-center">
                                 <img src="images/check.svg" width="50px" alt="chech">

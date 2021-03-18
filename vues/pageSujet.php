@@ -26,6 +26,8 @@
         $nbCom = $getCom->rowCount();
     }
 
+    include('include/nav.php');
+
 ?>
 
 <div class="pageSujet page marge d-flex">

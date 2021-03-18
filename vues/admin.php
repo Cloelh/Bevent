@@ -13,6 +13,8 @@
     $getUser = $bdd->prepare("SELECT * FROM user");
     $getUser->execute();
 
+    include('include/nav.php');
+
 ?>
 
 <div class="admin marge page p-3">

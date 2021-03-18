@@ -15,6 +15,8 @@ if(isset($_SESSION['id'])){
     ]);
     $nbSujet = $getSujet->rowCount();
 
+    include('include/nav.php');
+
 } else {
     // TODO : retour à la connexion
 }
