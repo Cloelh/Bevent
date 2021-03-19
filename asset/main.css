@@ -61,6 +61,7 @@ h2, h4{
 
 .page{
     box-shadow: 0px 0px 25px rgba(0, 0, 0, .30);
+    background-color: white;
 }
 
 
@@ -188,6 +189,27 @@ span.suppression{
 }
 .pub1{
     background: url('https://labo.fnac.com/wp-content/uploads/2021/03/Intel-11th_Gen-Core-desktop-1-650x455.jpg');
+    background-size: cover;
+    background-position: center;
+    content:" ";
+    height: 200px;
+}
+.pub2{
+    background: url('https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    content:" ";
+    height: 400px;
+}
+.pub3{
+    background: url('https://images.unsplash.com/photo-1598368518818-f7c79b6d982f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80');
+    background-size: cover;
+    background-position: center;
+    content:" ";
+    height: 250px;
+}
+.pub4{
+    background: url('https://images.unsplash.com/photo-1472437774355-71ab6752b434?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80');
     background-size: cover;
     background-position: center;
     content:" ";

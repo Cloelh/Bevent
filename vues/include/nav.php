@@ -24,16 +24,23 @@
                 <button class="bg-transparent" type="button" data-bs-toggle="modal" data-bs-target="#userProfil">
                     <img src="images/user/<?=$_SESSION['avatar']?>.svg" width="40px" alt=""> <?=$_SESSION['pseudo']?>
                 </button>
-            <?php if($_SESSION['role'] == 'admin') { ?>
-                <a href="index.php?action=admin">Admin</a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <?php if($_SESSION['role'] == 'admin') { ?>
+                            <a href="index.php?action=admin">Admin</a>
+                        <?php } else { ?>
+                            <li><a class="dropdown-item link" href="index.php?action=mySujet">Mes sujets</a></li>
+                            <li><a class="dropdown-item link" href="index.php?action=myMessage">Mes messages</a></li>
+                        <?php } ?>
+                            <li><a class="dropdown-item link" href="index.php?action=logout">Se déconnecter</a>   </li>
+                    </ul>
+                </div>
             <?php } else { ?>
-                <a class="link" href="index.php?action=mySujet">Mes sujets</a>
-                <a class="link" href="index.php?action=myMessage">Mes messages</a>
+                <a class="link" href="index.php?action=connexion">Se connecter</a>
             <?php } ?>
-            <a class="link" href="index.php?action=logout">Se déconnecter</a>
-        <?php } else { ?>
-            <a class="link" href="index.php?action=connexion">Se connecter</a>
-        <?php } ?>
     </nav>
     <nav class="navbar list-categorie d-flex justify-content-around">
         <?php while($c = $getCat->fetch()){ ?>

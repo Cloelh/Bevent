@@ -1,3 +1,7 @@
+<!-- 
+    Fonctionnalité ajouter une catégorie
+ -->
+
 <?php
 
     if(
@@ -15,8 +19,8 @@
 
             header("Location: index.php?action=admin");
     } else {
-        // TODO : 
-        echo "pas ook";
+        $message = "renseigner le nom de la catégorie et sa description pour en ajouter une";
+        header("Location: index.php?action=admin&messageAddCat=".$message);
     }
 
 ?>

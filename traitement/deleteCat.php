@@ -34,12 +34,10 @@
 
             header("Location: index.php?action=admin");
         } else {
-            // TODO : on autorié 
-            echo "non autorisé";
+            header("Location: index.php?action=home");
         }
     } else {
-        // TODO : redirection
-        echo "redirection";
+        header("Location: index.php?action=home");
     }
 
 

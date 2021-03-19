@@ -36,13 +36,12 @@
         
         <div class="sujet border border-1 p-3">
             <?php if($sujet['resolue'] == 1) {?>
-                <h2><img class="me-2" src="images/check.svg" width="40px" alt="chech"><?=$sujet['titre']?>  </h2>
+                <h2>[RESOLU] <?=$sujet['titre']?>  </h2>
             <?php } else {?>
                 <h2><?=$sujet['titre']?></h2>
             <?php } ?>
             <p><i>Auteur : <?=$sujet['pseudo']?></i></p>
-            <p><?=nl2br($sujet['contenu'])?></p>
-            <!-- TODO : faire en sorte que la redirection au formulaire fonctionne -->
+            <p><?=nl2br($sujet['contenu'])?></p>    
             <a class="button d-flex align-items-center justify-content-center" href="#commenter">Répondre<img src="images/bulle.svg" alt="pen" width="20px"></a>
         </div>
         <?php if($_SESSION['role'] == 'admin') { ?>
@@ -85,21 +84,21 @@
                         <label for="comment">Repondre : </label>
                         <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Envoyer la réponse</button>
+                    <button type="submit" class="button">Envoyer la réponse</button>
                     <?php if(isset($_GET['messageCom'])){ ?>
                         <p class="messageErreur"><?=$_GET['messageCom']?></p>
                     <?php } ?>
                 </form>
             </div>
         <?php } else { ?>
-            <p class="mt-4">Vous devez être connecter pour laisser un message ! <a href="?action=connexion">Se connecter maintenant :)</a></p>
+            <p class="mt-4">Vous devez être connecter pour laisser un message ! <a class="link" href="?action=connexion">Se connecter maintenant :)</a></p>
             <div id="commenter" class="commenter border border-1 p-3">
                 <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
                     <div class="mb-3">
                         <label for="comment">Repondre : </label>
                         <textarea disabled="disabled" name="comment" id="comment" cols="50" rows="10"></textarea>
                     </div>
-                    <button disabled="disabled" type="submit" class="btn btn-primary">Envoyer la réponse</button>
+                    <button disabled="disabled" type="submit" class="button">Envoyer la réponse</button>
                 </form>
             </div>
         <?php } ?>

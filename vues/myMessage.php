@@ -23,9 +23,9 @@
                                 'idMessage' => $m['id']
                             ]);
                             $Reponse = $getReponse->fetch();
-                            $nbReponse = $getMessage->rowCount();
-                            if($nbReponse = 0){ ?>
-                                <p>Vous n'avez pas encore de réponse de l'administrateur, revenez plus tard :)</p>
+                            $nbReponse = $getReponse->rowCount();
+                            if($nbReponse == 0){ ?>
+                                <p><b>Vous n'avez pas encore de réponse de l'administrateur, revenez plus tard :)</b></p>
                             <?php } else { ?>
                                 <p><b>Voici là réponse de l'administrateur : </b></p>
                                 <p><?=$Reponse['reponse']?></p>

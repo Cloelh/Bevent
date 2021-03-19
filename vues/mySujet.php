@@ -18,7 +18,7 @@ if(isset($_SESSION['id'])){
     include('include/nav.php');
 
 } else {
-    // TODO : retour à la connexion
+    header("Location: index.php?action=connexion");
 }
 
 ?>

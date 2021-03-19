@@ -45,6 +45,9 @@
             </li>
         <?php } ?>
     </ul>
+    <?php if(isset($_GET['messageAddCat']) AND !empty($_GET['messageAddCat'])){ ?>
+        <p><?=$_GET['messageAddCat'];?></p>
+    <?php } ?>
     <!-- Button trigger modal => ajout d'une cat-->
     <button type="button" class="button mt-4" data-bs-toggle="modal" data-bs-target="#addCat">
         Ajouter une catégorie <img src="images/add.svg" width="30px" alt="">

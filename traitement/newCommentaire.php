@@ -1,12 +1,4 @@
 <?php
-echo "commentaire : ";
-echo $_POST['comment'];
-echo "</br> id de session : ";
-echo $_SESSION['id'];
-echo "</br> id du sujet : ";
-echo $_GET['idSujet'];
-
-
     if(
         isset($_POST['comment']) AND !empty($_POST['comment']) AND
         isset($_SESSION['id']) AND 
@@ -25,10 +17,8 @@ echo $_GET['idSujet'];
         ]);
         header("Location: index.php?action=pageSujet&idSujet=".$idSujet);
     }   else {
-        echo "erreur";
-        // TODO
-        // $message = "erreur";
-        // header("Location: index.php?action=pageSujet&idSujet=".$$idSujet."&messageCom=".$message);
+        $message = "renseigner un champs";
+        header("Location: index.php?action=pageSujet&idSujet=".$idSujet."&messageCom=".$message);
     }
 
 

@@ -8,15 +8,12 @@
     </div>
     <a href="https://labo.fnac.com/actualite/rocket-lake-s-intel-officialise-11e-generation-processeurs-core-pc-bureau/" 
         target="_BLANK" class="pub pub1 m-2 border border-1 d-flex align-items-center justify-content-center"></a>
-    <div class="pub border m-2 d-flex align-items-center justify-content-center">
-        <p>pub</p>
-    </div>
-    <div class="pub border border-1 p-5 d-flex align-items-center justify-content-center">
-        <p>pub</p>
-    </div>
-    <div class="pub border border-1 p-5 d-flex align-items-center justify-content-center">
-        <p>pub</p>
-    </div>
+    <a href="https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+        target="_BLANK" class="pub pub2 m-2 border border-1 d-flex align-items-center justify-content-center"></a>
+    <a href="https://images.unsplash.com/photo-1598368518818-f7c79b6d982f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80" 
+        target="_BLANK" class="pub pub3 m-2 border border-1 d-flex align-items-center justify-content-center"></a>
+    <a href="https://labo.fnac.com/actualite/rocket-lake-s-intel-officialise-11e-generation-processeurs-core-pc-bureau/" 
+        target="_BLANK" class="pub pub4 m-2 border border-1 d-flex align-items-center justify-content-center"></a>
 </div>
 
 <a href="#" data-bs-toggle="modal" data-bs-target="#proposition" class="link plus d-flex align-items-center"><img class="me-3" width="50px" src="images/plus.svg"> <p class=" bg-light p-1 rounded-pill">Tu as une question? une proposition?</p> </a>

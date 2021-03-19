@@ -18,7 +18,6 @@
                     $reqpseudo->execute([
                         'pseudo' => $pseudo
                     ]);
-                    echo "ok";
                     $pseudoexist = $reqpseudo->rowCount();
 
                     if($pseudoexist == 0){
@@ -29,12 +28,13 @@
                             $mailexist = $reqmail->rowCount(); //si une ligne est renvoyé, l'email existe déjà dans la bdd
 
                             if($mailexist == 0) {
-                                    $insertUser = $bdd->prepare("INSERT INTO user(`pseudo`, `mail`, `mdp`, `role`) VALUES(:pseudo, :mail, :mdp, :role)");
+                                    $insertUser = $bdd->prepare("INSERT INTO user(`pseudo`, `mail`, `mdp`, `role`, `idUserProfil`) VALUES(:pseudo, :mail, :mdp, :role, :idAvatar)");
                                     $insertUser->execute([
                                         'pseudo' => $pseudo,
                                         'mail' => $mail,
                                         'mdp' => $mdp,
-                                        'role' => $role
+                                        'role' => $role,
+                                        'idAvatar' => 1
                                     ]);
                                     $message="votre compte a bien été crée";
                                     header("Location: index.php?action=connexion&messageInscription=".$message);
