@@ -80,47 +80,6 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Message de <?=$l['pseudo']?>
                 <a href="?action=readMessage&idMessage=<?=$l['id']?> " class="voirMessage">Voir le message</a>
-
-                <!-- lire un message -->
-    
-                <div class="modal fade" id="voirMessage" tabindex="-1" aria-labelledby="voirMessageLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="voirMessageLabel">Lire message</h5>
-                                <a href="?action=readMessage&idMessage=<?=$m['id']?> " class="voirMessage">Voir le message</a>
-                            </div>
-                            <div class="modal-body">
-                                <h4>Message de <?=$l['pseudo']?></h4>
-                                <p><?=$l['message']?></p>
-                                <?php 
-                                echo $l['id'];
-                                    
-
-                                    if($nbReponse > 0) { ?>
-                                        <div class="border border-1 p-3">
-                                            <p><b>Votre réponse : </b></p>
-                                            <p><?=$reponse['reponse']?></p>
-                                        </div>
-                                    <?php } else { ?>
-                                        <form action="?action=sendReponse&idMessage=<?=$l['id']?>" method="POST">
-                                            <div class="form-group">
-                                                <label for="reponse">Répondre :  </label>
-                                                <textarea class="form-control" name="reponse" id="reponse" rows="3"></textarea>
-                                                <button type="submit" class="button mt-3">Répondre</button>
-                                            </div>
-                                        </form>
-                                    <?php }
-                                ?>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </li>
         <?php } ?>
     </ul>

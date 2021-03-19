@@ -239,3 +239,14 @@ span.suppression{
         transform: translateX(0px);
     }
 }
+
+
+/* PAGZ 404 */
+
+.page404 h3{
+    font-size: 6em;
+}
+.page404 a{
+    color: black;
+    text-decoration: underline !important;
+}
