@@ -4,14 +4,20 @@
 
     // on verifie si l'utilisateur à demander le filtre pour n'avoir que les sujet résolues par les internautes 
     if(isset($_GET['actionResolue']) AND $_GET['actionResolue'] == true){
-        $getSujet = $bdd->prepare('SELECT * FROM `sujet` WHERE `resolue` = :resolue ORDER BY `id` DESC');
+        $getSujet = $bdd->prepare('SELECT sujet.*, user.idUserProfil, cat.categorie, cat.id AS idCat 
+        FROM `sujet` 
+        INNER JOIN `cat` AS cat ON `sujet`.`id_cat` = `cat`.`id`
+        INNER JOIN `user` ON `sujet`.`id_user` = `user`.`id`
+        WHERE `resolue` = :resolue 
+        ORDER BY `id` DESC');
         $getSujet->execute([
             'resolue' => 1
         ]);
     } else {
         // sinon on affiche tous les sujets 
-        $getSujet = $bdd->prepare('SELECT * FROM `sujet` 
-        INNER JOIN `cat` ON `sujet`.`id_cat` = `cat`.`id`
+        $getSujet = $bdd->prepare('SELECT sujet.*, user.idUserProfil, cat.categorie, cat.id AS idCat
+        FROM `sujet`
+        INNER JOIN `cat` AS cat ON `sujet`.`id_cat` = `cat`.`id`
         INNER JOIN `user` ON `sujet`.`id_user` = `user`.`id`
         ORDER BY `sujet`.`id` DESC');
         $getSujet->execute();
@@ -25,7 +31,7 @@
 <div class="home page marge d-flex">
     <div class="feed col-8 p-5">
         <a class="button d-flex align-items-center justify-content-center" href="index.php?action=createPost">Poser votre question<img src="images/pen.svg" alt="pen" width="20px"></a>
-    
+
         <div class="mt-5">
             <div class="d-flex justify-content-between">
                 <div class="resultatNb"><?=$nbSujet?> résultat(s)</div>
@@ -50,7 +56,7 @@
                             <?php } else { ?>
                                 <p><?=$s['contenu']?></p>
                             <?php } ?>
-                            <span class="categorie"><a href="index.php?action=pageCategorie&idCat=<?=$s['id']?>"><?=$s['categorie']?></a></span>
+                            <span class="categorie"><a href="index.php?action=pageCategorie&idCat=<?=$s['idCat']?>"><?=$s['categorie']?></a></span>
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-end col-2">

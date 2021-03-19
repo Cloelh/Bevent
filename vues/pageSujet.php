@@ -41,7 +41,7 @@
                 <h2><?=$sujet['titre']?></h2>
             <?php } ?>
             <p><i>Auteur : <?=$sujet['pseudo']?></i></p>
-            <p><?=$sujet['contenu']?></p>
+            <p><?=nl2br($sujet['contenu'])?></p>
             <!-- TODO : faire en sorte que la redirection au formulaire fonctionne -->
             <a class="button d-flex align-items-center justify-content-center" href="#commenter">Répondre<img src="images/bulle.svg" alt="pen" width="20px"></a>
         </div>
@@ -62,10 +62,10 @@
                     $auteur = $getAuteur->fetch();    
                 ?>
                 <div class="commentaire border border-1 p-3 d-flex align-items-start">
-                    <img src="images/user.svg" alt="user" width="40px" class="me-2">
+                    <img src="images/user/<?=$auteur['idUserProfil']?>.svg" alt="user" width="50px" class="me-2">
                     <div class="text d-flex flex-column">
                         <b><?=$auteur['pseudo']?></b>
-                        <p><?=$c['commentaire']?></p>
+                        <p><?=nl2br($c['commentaire'])?></p>
                         <?php if($_SESSION['role'] == 'admin') { ?>
                             <span class="suppression"><a href="index.php?action=deleteCom&idCom=<?=$c['id']?>&idSujet=<?=$idSujet?>">Suppression</a></span>
                         <?php } else if ($_SESSION['id'] == $c['id_user']){ ?>
@@ -83,7 +83,7 @@
                 <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
                     <div class="mb-3">
                         <label for="comment">Repondre : </label>
-                        <input class="form-control" type="text" name="comment" id="comment">
+                        <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Envoyer la réponse</button>
                     <?php if(isset($_GET['messageCom'])){ ?>
@@ -97,7 +97,7 @@
                 <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
                     <div class="mb-3">
                         <label for="comment">Repondre : </label>
-                        <input disabled="disabled" class="form-control" type="text" name="comment" id="comment">
+                        <textarea disabled="disabled" name="comment" id="comment" cols="50" rows="10"></textarea>
                     </div>
                     <button disabled="disabled" type="submit" class="btn btn-primary">Envoyer la réponse</button>
                 </form>

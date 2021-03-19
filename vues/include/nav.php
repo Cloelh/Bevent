@@ -21,8 +21,8 @@
         </div>
         <?php if(isset($_SESSION['id'])){ ?>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userProfil">
-                x
+                <button class="bg-transparent" type="button" data-bs-toggle="modal" data-bs-target="#userProfil">
+                    <img src="images/user/<?=$_SESSION['avatar']?>.svg" width="40px" alt=""> <?=$_SESSION['pseudo']?>
                 </button>
             <?php if($_SESSION['role'] == 'admin') { ?>
                 <a href="index.php?action=admin">Admin</a>

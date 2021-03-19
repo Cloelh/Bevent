@@ -8,8 +8,11 @@
             'newAvatar' => $idAvatar,
             'idSession' => $_SESSION['id']
         ]);
+        echo $_SESSION['idUserProfil'];
+        $_SESSION['idUserProfil'] = $idAvatar;
+        echo $_SESSION['idUserProfil'];
 
-        // header("Location: javascript:history.go(-1)");
+        // header("Location: ".$_SERVER['HTTP_REFERER']);
     }
 
 

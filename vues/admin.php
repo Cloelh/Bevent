@@ -6,8 +6,8 @@
 <?php  
 
     // on selectionne toutes les catégories
-    $getCat = $bdd->prepare("SELECT * FROM cat");
-    $getCat->execute();
+    $getAllCat = $bdd->prepare("SELECT * FROM cat");
+    $getAllCat->execute();
 
     // on selectionnne tous les user
     $getUser = $bdd->prepare("SELECT * FROM user");
@@ -23,10 +23,10 @@
     <!-- Liste des catégories  -->
     <h4>Catégorie </h4>
     <ul class="list-group">
-        <?php while ($cat = $getCat->fetch()) { ?>
+        <?php while ($c = $getAllCat->fetch()) { ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <?=$cat['categorie']?>
-                <span class="suppression"><a href="index.php?action=deleteCat&idCat=<?=$cat['id']?>">Suppression</a></span>
+                <?=$c['categorie']?>
+                <span class="suppression"><a href="index.php?action=deleteCat&idCat=<?=$c['id']?>">Suppression</a></span>
             </li>
         <?php } ?>
     </ul>

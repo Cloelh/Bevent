@@ -22,6 +22,7 @@
                 $_SESSION['email'] = $userInfo['email'];
                 $_SESSION['mdp'] = $userInfo['mdp'];
                 $_SESSION['role'] = $userInfo['role'];
+                $_SESSION['avatar'] = $userInfo['idUserProfil'];
                 header("Location: index.php?action=home");
                 exit;
             } else {
