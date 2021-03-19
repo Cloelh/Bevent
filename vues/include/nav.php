@@ -28,6 +28,7 @@
                 <a href="index.php?action=admin">Admin</a>
             <?php } else { ?>
                 <a class="link" href="index.php?action=mySujet">Mes sujets</a>
+                <a class="link" href="index.php?action=myMessage">Mes messages</a>
             <?php } ?>
             <a class="link" href="index.php?action=logout">Se déconnecter</a>
         <?php } else { ?>

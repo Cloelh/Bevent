@@ -7,11 +7,13 @@ $listeDesActions = array(
     "home" => "vues/home.php",
     "connexion" => "vues/connexion.php",
     "mySujet" => "vues/mySujet.php",
+    "myMessage" => "vues/myMessage.php",
     "admin" => "vues/admin.php",
     "createPost" => "vues/createPost.php",
     "pageSujet" => "vues/pageSujet.php",
     "pageCategorie" => "vues/pageCategorie.php",
     "search" => "vues/search.php",
+    "readMessage" => "vues/readMessage.php",
 
     //traitement
     "register" => "traitement/register.php",
@@ -26,6 +28,9 @@ $listeDesActions = array(
     "deleteUser" => "traitement/deleteUser.php",
     "postResolue" => "traitement/postResolue.php",
     "changeAvatar" => "traitement/changeAvatar.php",
+    "sendMessage" => "traitement/sendMessage.php",
+    "sendReponse" => "traitement/sendReponse.php",
+    
 )
 
 ?>

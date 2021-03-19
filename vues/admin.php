@@ -2,19 +2,34 @@
     Cette page est la page administrateur, elle permet à l'admin uniquement de : 
         - visualiser les catégories, d'en supprimer et d'en ajouter 
         - visualiser les users et d'en supprimer
+        - visualiser les messages des utilisateurs
  -->
 <?php  
 
     // on selectionne toutes les catégories
-    $getAllCat = $bdd->prepare("SELECT * FROM cat");
+    $getAllCat = $bdd->prepare("SELECT * FROM `cat`");
     $getAllCat->execute();
 
     // on selectionnne tous les user
-    $getUser = $bdd->prepare("SELECT * FROM user");
+    $getUser = $bdd->prepare("SELECT * FROM `user`");
     $getUser->execute();
 
-    include('include/nav.php');
+    // on selectionne tius 
+    $getMessage = $bdd->prepare("SELECT message.*, user.pseudo 
+    FROM `message`
+    INNER JOIN `user` ON `message`.`id_user` = `user`.`id`
+    WHERE `vu` = 0 
+    ORDER BY `id` DESC");
+    $getMessage->execute();
 
+    $getMessageLus = $bdd->prepare("SELECT message.*, user.pseudo 
+    FROM `message`
+    INNER JOIN `user` ON `message`.`id_user` = `user`.`id`
+    WHERE `vu` = 1 
+    ORDER BY `id` DESC");
+    $getMessageLus->execute();
+
+    include('include/nav.php');
 ?>
 
 <div class="admin marge page p-3">
@@ -36,6 +51,7 @@
     </button>
 
     <!-- Liste des users -->
+    <!-- TODO supprimer aussi ses post et message !!  -->
     <h4 class="pt-5">Utilisateurs</h4>
     <ul class="list-group">
         <?php while ($u = $getUser->fetch()) { ?>
@@ -46,6 +62,69 @@
         <?php } ?>
     </ul>
 
+    <!-- listes des messages non lu -->
+    <h4 class="pt-5">Messages non lus </h4>
+    <ul class="list-group">
+        <?php while ($m = $getMessage->fetch()) { ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <?=$m['message']?> 
+                <a href="?action=readMessage&idMessage=<?=$m['id']?> " class="voirMessage">Voir le message</a>
+            </li>
+        <?php } ?>
+    </ul>
+
+    <!-- listes des messages lu -->
+    <h4 class="pt-5">Messages lus </h4>
+    <ul class="list-group">
+        <?php while ($l = $getMessageLus->fetch()) { ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Message de <?=$l['pseudo']?>
+                <a href="?action=readMessage&idMessage=<?=$l['id']?> " class="voirMessage">Voir le message</a>
+
+                <!-- lire un message -->
+    
+                <div class="modal fade" id="voirMessage" tabindex="-1" aria-labelledby="voirMessageLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="voirMessageLabel">Lire message</h5>
+                                <a href="?action=readMessage&idMessage=<?=$m['id']?> " class="voirMessage">Voir le message</a>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Message de <?=$l['pseudo']?></h4>
+                                <p><?=$l['message']?></p>
+                                <?php 
+                                echo $l['id'];
+                                    
+
+                                    if($nbReponse > 0) { ?>
+                                        <div class="border border-1 p-3">
+                                            <p><b>Votre réponse : </b></p>
+                                            <p><?=$reponse['reponse']?></p>
+                                        </div>
+                                    <?php } else { ?>
+                                        <form action="?action=sendReponse&idMessage=<?=$l['id']?>" method="POST">
+                                            <div class="form-group">
+                                                <label for="reponse">Répondre :  </label>
+                                                <textarea class="form-control" name="reponse" id="reponse" rows="3"></textarea>
+                                                <button type="submit" class="button mt-3">Répondre</button>
+                                            </div>
+                                        </form>
+                                    <?php }
+                                ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </li>
+        <?php } ?>
+    </ul>
+    
 
     <!-- MODAL -->
 
@@ -73,5 +152,7 @@
             </div>
         </div>
     </div>
+
+    
 
 </div>

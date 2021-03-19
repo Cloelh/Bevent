@@ -18,3 +18,29 @@
         <p>pub</p>
     </div>
 </div>
+
+<a href="#" data-bs-toggle="modal" data-bs-target="#proposition" class="link plus d-flex align-items-center"><img class="me-3" width="50px" src="images/plus.svg"> <p class=" bg-light p-1 rounded-pill">Tu as une question? une proposition?</p> </a>
+
+<!-- Modal -->
+<div class="modal fade" id="proposition" tabindex="-1" aria-labelledby="propositionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="propositionLabel">Ecris-nous! :)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="?action=sendMessage" method="POST">
+            
+            <div class="form-group">
+            <label for="message">Votre message : </label>
+              <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
