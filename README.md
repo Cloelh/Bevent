@@ -2,6 +2,11 @@
 
 Forum en PHP par Cloé Lhenry 
 
+> télécharger le projet :
+- git clone https://github.com/Cloelh/MyForum.git
+- importer la bdd dans son phpMyAdmin (appeler sa bdd myForum)
+- modifier le fichier config/bdd.php pour la connexion à la bdd 
+
 # Fonctionnalités principales 
 - connexion à son compte 
 - écrire un nouveau sujet
