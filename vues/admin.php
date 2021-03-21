@@ -14,7 +14,7 @@
     $getUser = $bdd->prepare("SELECT * FROM `user`");
     $getUser->execute();
 
-    // on selectionne tius 
+    // on selectionne tous les messages non lus associés à leur user
     $getMessage = $bdd->prepare("SELECT message.*, user.pseudo 
     FROM `message`
     INNER JOIN `user` ON `message`.`id_user` = `user`.`id`
@@ -22,6 +22,7 @@
     ORDER BY `id` DESC");
     $getMessage->execute();
 
+    // on selectionne tous les messages lus associés à leur user 
     $getMessageLus = $bdd->prepare("SELECT message.*, user.pseudo 
     FROM `message`
     INNER JOIN `user` ON `message`.`id_user` = `user`.`id`
@@ -54,7 +55,6 @@
     </button>
 
     <!-- Liste des users -->
-    <!-- TODO supprimer aussi ses post et message !!  -->
     <h4 class="pt-5">Utilisateurs</h4>
     <ul class="list-group">
         <?php while ($u = $getUser->fetch()) { ?>
@@ -65,24 +65,24 @@
         <?php } ?>
     </ul>
 
-    <!-- listes des messages non lu -->
+    <!-- listes des messages non lus -->
     <h4 class="pt-5">Messages non lus </h4>
     <ul class="list-group">
         <?php while ($m = $getMessage->fetch()) { ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?=$m['message']?> 
-                <a href="?action=readMessage&idMessage=<?=$m['id']?> " class="voirMessage">Voir le message</a>
+                <a class="button" href="?action=readMessage&idMessage=<?=$m['id']?> " class="voirMessage">Voir le message</a>
             </li>
         <?php } ?>
     </ul>
 
-    <!-- listes des messages lu -->
+    <!-- listes des messages lus -->
     <h4 class="pt-5">Messages lus </h4>
     <ul class="list-group">
         <?php while ($l = $getMessageLus->fetch()) { ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Message de <?=$l['pseudo']?>
-                <a href="?action=readMessage&idMessage=<?=$l['id']?> " class="voirMessage">Voir le message</a>
+                <a class="button" href="?action=readMessage&idMessage=<?=$l['id']?> " class="voirMessage">Voir le message</a>
             </li>
         <?php } ?>
     </ul>

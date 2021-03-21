@@ -1,18 +1,20 @@
 <?php
 
+    // on verifie que l'on recupere un id de message 
     if(isset($_GET['idMessage'])){
 
         $idMessage = $_GET['idMessage'];
         echo $idMessage;
 
+        // on recupere le message de l'id selectionné, son pseudo associé 
         $getMessageById = $bdd->prepare("SELECT `message`.*, `user`.`pseudo` 
         FROM `message` 
         INNER JOIN `user` ON `message`.`id_user` = `user`.`id`
         WHERE `message`.`id` = :id");
-        
         $getMessageById->execute([
             'id' => $idMessage
         ]);
+        
         $Message = $getMessageById->fetch();
 
     }

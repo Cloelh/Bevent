@@ -1,4 +1,5 @@
 <?php
+    // on verifie que l'on recupere un id de categorie 
     if(isset($_GET['idCat'])) {
         $idCat = $_GET['idCat'];
         $getCat = $bdd->prepare('SELECT * FROM `cat` WHERE `id`=:id');
@@ -53,7 +54,6 @@
                 <div class="post d-flex justify-content-between mb-5 border-violet p-3">
                 <?php } ?>
                     <?php
-                    // TODO : inner join in 
                         $idCat = $s['id_cat'];
                         $catPost = $bdd->prepare('SELECT * FROM cat WHERE id=?');
                         $catPost->execute(array($idCat));

@@ -1,8 +1,3 @@
-<!-- 
-    Page sujet : visualisation d'un sujet sélécionné grace à son id 
-        => on peut y poser des commentaires et retrouver sa catégorie 
- -->
-
 <?php
 
     if(isset($_GET['idSujet'])){
@@ -41,7 +36,7 @@
                 <h2><?=$sujet['titre']?></h2>
             <?php } ?>
             <p><i>Auteur : <?=$sujet['pseudo']?></i></p>
-            <p><?=nl2br($sujet['contenu'])?></p>    
+            <p><?=nl2br($sujet['contenu'])?></p>   
             <a class="button d-flex align-items-center justify-content-center" href="#commenter">Répondre<img src="images/bulle.svg" alt="pen" width="20px"></a>
         </div>
         <?php if($_SESSION['role'] == 'admin') { ?>
@@ -80,7 +75,7 @@
         <?php if(isset($_SESSION['id'])){ ?>
             <div id="commenter" class="commenter border border-1 p-3">
                 <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex flex-column">
                         <label for="comment">Repondre : </label>
                         <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
                     </div>
@@ -94,7 +89,7 @@
             <p class="mt-4">Vous devez être connecter pour laisser un message ! <a class="link" href="?action=connexion">Se connecter maintenant :)</a></p>
             <div id="commenter" class="commenter border border-1 p-3">
                 <form action="index.php?action=newCommentaire&idSujet=<?=$idSujet?>" method="POST">
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex flex-column">
                         <label for="comment">Repondre : </label>
                         <textarea disabled="disabled" name="comment" id="comment" cols="50" rows="10"></textarea>
                     </div>

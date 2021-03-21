@@ -1,6 +1,8 @@
 <?php
 
+    // on veritfie que l'on est un admin (uniquement lui peut supprimer un user)
     if($_SESSION['role'] == 'admin'){
+        // on verifie que l'on recupre un id user dans le get 
         if(isset($_GET['idUser'])){
             $idUser = $_GET['idUser'];
 
@@ -46,11 +48,14 @@
 
 
             header("Location: index.php?action=admin");
+            exit;
         } else {
             header("Location: index.php?action=admin");
+            exit;
         }
     } else {
         header("Location: index.php?action=home");
+        exit;
     }
 
 ?>

@@ -34,12 +34,15 @@
 
         <div class="mt-5">
             <div class="d-flex justify-content-between">
+                <!-- nombre de résultats retournés  -->
                 <div class="resultatNb"><?=$nbSujet?> résultat(s)</div>
+
                 <?php if(isset($_GET['actionResolue']) AND $_GET['actionResolue'] == true) { ?>
                     <div class="resolue"><a class="link" href="?action=home">voir tous les sujets </a></div>
                 <?php } else { ?>
                     <div class="resolue"><a class="link" href="?action=home&actionResolue=true">ne voir que les sujets résolues</a></div>
                 <?php  } ?>
+                
             </div>
             <?php while($s = $getSujet->fetch()){ ?>
                 <?php if($s['resolue'] == 0) { ?>

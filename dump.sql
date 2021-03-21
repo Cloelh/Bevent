@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 19, 2021 at 02:46 PM
+-- Generation Time: Mar 21, 2021 at 08:21 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -54,17 +54,10 @@ CREATE TABLE `commentaires` (
 --
 
 INSERT INTO `commentaires` (`id`, `id_user`, `commentaire`, `id_sujet`) VALUES
-(12, 1, 'com', 1),
-(13, 1, 'prengonieroge', 1),
-(29, 3, 'salut je cherche une relation serieuse, es-tu intéressé ?', 1),
-(30, 3, 'non dsl j\'ai deja trop de meuf dans ma vie ', 1),
-(31, 3, 'pas grave ', 1),
-(33, 2, 'CE N\'EST PAS UN SITE DE RENCONTRE', 1),
-(34, 2, 'T\'ES BAN ROCKPIKOU', 1),
-(35, 1, 'test', 2),
-(36, 1, 'test', 2),
-(37, 1, 'ggr', 1),
-(38, 1, ',kgnre\r\ngk,ergnre\r\ngerlg,reg,', 1);
+(45, 5, 'You cannot mix synchronous and asynchronous code since that goes against the point of why async exists. It exists so you can perform actions in the background while the sync code keeps running. An example of this would be fetching information from a server - you don\'t want to keep the user waiting until EACH and EVERY fetch is done, so you do it in the background and update the page when it is complete. –', 9),
+(47, 9, 'ngbCalender loads inner style in your page when page loads in browser. If you inspect and in Element tab search for .customer-day class and append border-radius : 50% ... See image below , and for Range background there will be class .range change it according to your desire color and background shape.', 13),
+(48, 8, 'This is driving me crazy, spent 4hours today on trying to fix it, with no success. Even thought about switching to Chart.js, but apparently there is no real support for Vue.js 3 either.', 15),
+(50, 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum lectus leo, nec feugiat nisi malesuada vitae. Praesent a ex non massa placerat molestie ut nec dolor. Vivamus et magna porttitor augue fermentum egestas sit amet at felis. Vestibulum dapibus et dolor quis ullamcorper. Praesent auctor justo ornare, tempus purus ut, interdum felis. Quisque scelerisque ligula felis. Phasellus sed lectus arcu. Suspendisse cursus eu tellus sed sagittis. Quisque in ultrices quam.', 14);
 
 -- --------------------------------------------------------
 
@@ -84,17 +77,9 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id`, `id_user`, `message`, `vu`) VALUES
-(1, 1, 'Bonjour gnjrengre', 1),
-(2, 1, 'deuxieme message\r\n', 1),
-(3, 1, 'message \r\n', 1),
-(4, 2, 'test', 1),
-(5, 2, 'test', 1),
-(6, 2, 'test', 1),
-(7, 2, 'gregre', 1),
-(8, 2, 'gregreg', 1),
-(9, 2, 'grgreg', 1),
-(10, 2, 'gegre', 1),
-(11, 2, 'gregre', 0);
+(17, 5, 'Vous devriez ajouter une catégorie TypeScript !! ', 0),
+(18, 6, 'on devrait pouvoir ajouter du code dans nos questions, ce serait possible ? ', 1),
+(19, 10, 'J\'adore ce forum !! \r\nj\'aimerai pouvoir mettre des photo dans mes posts, pour certaines questions ce serait pratique :) ', 0);
 
 -- --------------------------------------------------------
 
@@ -113,16 +98,7 @@ CREATE TABLE `reponse` (
 --
 
 INSERT INTO `reponse` (`id`, `id_message`, `reponse`) VALUES
-(6, 1, 'ma reponse'),
-(7, 2, 'fefez'),
-(8, 3, 'reponse unique\r\n'),
-(9, 5, 'fezfez'),
-(10, 4, 'gregre'),
-(11, 6, 'fezfez'),
-(12, 9, 'erzrez'),
-(13, 8, 'opeajkropez\r\n'),
-(14, 7, 'fregre'),
-(15, 10, 'gregre');
+(18, 18, 'oui, ce serait possible, nous allons y reflechir dans une prochaine MAJ, merci user1 pour ta proposition :) ');
 
 -- --------------------------------------------------------
 
@@ -144,13 +120,14 @@ CREATE TABLE `sujet` (
 --
 
 INSERT INTO `sujet` (`id`, `titre`, `contenu`, `id_user`, `id_cat`, `resolue`) VALUES
-(1, 'premier post', 'contenu du premier post', 1, 3, 0),
-(2, 'test', 'orem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet tincidunt sem. Duis cursus justo risus, faucibus facilisis mi pellentesque a. Integer ultricies felis eget tincidunt viverra. Suspendisse iaculis rhoncus feugiat. Aenean sed risus vestibulum, lobortis orci ut, rhoncus enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc mi dui, cursus eu ex ac, viverra pellentesque felis. Duis vel felis eu enim finibus accumsan. Etiam faucibus mi non mauris tincidunt cursus. Sed blandit, lacus eget ultricies faucibus, mauris nunc ornare purus, vitae dictum tortor velit eget urna. In aliquam ex id metus gravida, non va', 1, 2, 1),
-(3, 'titre ', 'ffezgze', 1, 2, 1),
-(4, 'post javascript', 'orem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet tincidunt sem. Duis cursus justo risus, faucibus facilisis mi pellentesque a. Integer ultricies felis eget tincidunt viverra. Suspendisse iaculis rhoncus feugiat. Aenean sed risus vestibulum, lobortis orci ut, rhoncus enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc mi dui, cursus eu ex ac, viverra pellentesque felis. Duis vel felis eu enim finibus accumsan. Etiam faucibus mi non mauris tincidunt cursus. Sed blandit, lacus eget ultricies faucibus, mauris nunc', 1, 1, 0),
-(5, 'Setting the type to the incoming apiye state', 'I want to put an incoming API to the status but it says undefined. I want to discard my data coming to randomcocktail and then use it.\r\n\r\nRandom.tsx', 1, 4, 0),
-(6, 'test', 'test rock\r\n', 3, 4, 0),
-(7, 'titre avec retour à la ligne ', 'feergre\r\ngre\r\ngreg\r\nre\r\ngr\r\n\r\ngr\r\ngre', 1, 3, 0);
+(8, 'How To Opt Out of Default Base64 Encoding of Images In React?', 'So as I have already stated in this question that I asked earlier this evening (which yet awaits an answer with a green check mark), react (or maybe just CRA) has this feature that encodes images to base 64 and uses that encoded text instead of the path of the image.\r\n\r\nI need to disable this feature partially or entirely because of how base 64 images affect the performance when you overuse them. Is there any way to opt out of it??', 5, 4, 1),
+(9, 'Why is “async” placed on a function declaration instead of on a function call?', 'Obviously, the way of a function call (synchronous or asynchronous) should be related to the function call, not the function declaration. For example, if a function does an HTTP request, only the caller side can decide what it wants (wait for a return from the function or go to the next instruction).', 6, 1, 0),
+(10, 'Java script functionality of a calculator my current JS wont print errors or output the solution', 'JAVASCRIPT errors not printing nor is solution buttons work fine and will show in the box not sure if its my catch statement is wrong for printing the solution and 0 clue what is wrong with my errors.', 7, 1, 1),
+(12, 'TypeError: Failed to execute \'readAsArrayBuffer\' on \'FileReader\': parameter 1 is not of type \'Blob\'', 'I am getting an error everytime I submit my post without an image, submission of the image is optional because I run an if condition before appending the imagePath. working on a MEAN stack up to which I am new in.', 8, 2, 0),
+(13, 'ng datepicker css customization and change the selected date from sqaure to circle', 'i want to custom the calendar from this[enter image description here][1] to this[enter image description here][2]\r\n\r\nCan anyone please help me out. as i am not able to understand how to change selected day cell from sqaure to circle and select the range in same way. [1]: https://i.stack.imgur.com/JRprR.png [2]: https://i.stack.imgur.com/mnQ9P.png', 5, 2, 0),
+(14, 'How many instances of a module end up in the final bundle if it\'s referenced by several modules?', 'I\'m wondering what\'s the best strategy between\r\n\r\na shared module that contains all the reusable code\r\nindividual reusable codes that are referenced when needed\r\nI suppose that the case against putting all the reusable codes in a shared module is that it will be huge and will slow down the loading of the application because not every module need all the code in the share module.\r\n\r\nBoth GalleryModule and ProfileModule import CardModule. They are both lazy loaded as well.', 9, 2, 1),
+(15, 'Vue 3 how to correctly update data in Highcharts?', 'I have a small webapp with Vue.js 3 that shows a Highcharts Chart and some statistics, with global buttons for time-filters (All, Year, Month, Week).\r\nThe data of my Highchart chart needs to change, whenever one of the global buttons was pressed.\r\nI used this vue3 wrapper for Highcharts: Wrappers Github\r\n\r\nDisplaying the initial data (all) works like a charm, but when it comes to updating the data, it is really slow. That makes me think that I am doing something wrong with updating the data.\r\n\r\nI uploaded a video of my problem on YT: https://youtu.be/GEjHqoAElgI\r\n\r\nTried giving my component with the Chart the data as property, and have a watcher on that data, to update the Chart whenever the data changes. This works, but updating the chart takes forever (3-5 seconds). What is the recommended way of doing something like that?\r\n\r\nThis is my component:', 9, 3, 1),
+(16, 'Error Running React Native App From Terminal (iOS)', 'I am following the tutorial on the official React Native website.\r\n\r\nUsing the following to build my project:\r\n\r\nreact-native run-ios\r\nI get the error:\r\n\r\nFound Xcode project TestProject.xcodeproj\r\nxcrun: error: unable to find utility \"instruments\", not a developer   \r\ntool or in PATH\r\n\r\nCommand failed: xcrun instruments -s\r\nxcrun: error: unable to find utility \"instruments\", not a developer \r\ntool or in PATH\r\nAlthough, when I run the app from the .xcodeproj, everything works fine.\r\n\r\nAny suggestions?', 10, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -172,9 +149,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `pseudo`, `mail`, `mdp`, `role`, `idUserProfil`) VALUES
-(1, 'cloelh', 'cloelh@outlook.fr', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 8),
-(2, 'admin', 'admin@admin.fr', '00d70c561892a94980befd12a400e26aeb4b8599', 'admin', 13),
-(3, 'rockpikou', 'gbauvin@gmail.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'user', 1);
+(4, 'admin', 'admin@admin.fr', '00d70c561892a94980befd12a400e26aeb4b8599', 'admin', 7),
+(5, 'cloelh', 'cloelh@outlook.fr', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 10),
+(6, 'user1', 'user1@gmail.com', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 6),
+(7, 'user2', 'user2@gmail.com', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 9),
+(8, 'user3', 'user3@gmail.com', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 1),
+(9, 'user4', 'user4@gmail.com', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 9),
+(10, 'user5', 'user5@gmail.com', '00d70c561892a94980befd12a400e26aeb4b8599', 'user', 13);
 
 -- --------------------------------------------------------
 
@@ -266,31 +247,31 @@ ALTER TABLE `cat`
 -- AUTO_INCREMENT for table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `reponse`
 --
 ALTER TABLE `reponse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `sujet`
 --
 ALTER TABLE `sujet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `userProfil`

@@ -1,14 +1,10 @@
-<!-- 
-    Cette page est la page où un utilisateur retrouve tous ses posts
-        - il peut visualiser ses sujets et les passer en "resolue" 
- -->
-
 <?php
 
 if(isset($_SESSION['id'])){
     $idUser = $_SESSION['id'];
     $pseudo = $_SESSION['pseudo'];
 
+    // on selectionne tous les sujet de l'utilisateur connecté 
     $getSujet = $bdd->prepare('SELECT * FROM `sujet` WHERE `id_user`=:idUser ORDER BY `id` DESC');
     $getSujet->execute([
         'idUser' => $idUser
@@ -41,7 +37,7 @@ if(isset($_SESSION['id'])){
                     ?>
                     <img src="images/user.svg" alt="user" class="me-2" width="40px">
                     <div class="text">
-                        <h4><a href="index.php?action=pagePost&idPost=<?=$p['id']?>"><?=$p['titre']?></a></h4>
+                        <h4><a href="index.php?action=pageSujet&idSujet=<?=$p['id']?>"><?=$p['titre']?></a></h4>
                         <?php if(strlen($p['contenu']) > 150) { ?>
                             <p><?=substr($p['contenu'], 0, 150)?>...</p>
                         <?php } else { ?>

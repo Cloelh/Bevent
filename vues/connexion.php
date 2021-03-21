@@ -1,14 +1,13 @@
 <!-- si l'utilisateur est déjà connecté, on le renvoie à la homePage -->
 <?php if(isset($_SESSION['id'])){
     header("Location: index.php?action=home");
-
-    
 } 
 
 include('include/nav.php');
 ?>
 
 <div class="login d-flex justify-content-center align-items-center bgViolet pt-5">
+    <!-- formulaire connexion -->
     <div class="connexion bg-dark light">
         <h2>Connexion</h2>
         <?php
@@ -31,6 +30,7 @@ include('include/nav.php');
         </form>
     </div>
 
+    <!-- formulaire inscription  -->
     <div class="inscription bg-dark light">
         <h2>Inscription</h2>
         <form method="post" action="index.php?action=register">

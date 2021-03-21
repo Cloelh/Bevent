@@ -1,7 +1,7 @@
 <div class="marge page search p-3">
 
 <?php
-
+    // on verifie que l'on recupere un POST ou un GET de contenuSearch (formulaire => POST)
     if(isset($_POST['contenuSearch']) AND !empty($_POST['contenuSearch']) 
         OR isset($_GET['contenuSearch']) AND !empty($_GET['contenuSearch'])){
         if(isset($_POST['contenuSearch'])){
@@ -13,6 +13,7 @@
             $search = "%".$_GET['contenuSearch']."%";
         }
 
+        // on selectionne tous les sujet qui contienne la chaine de caractere $search dans leur tittre OU contenu OU categorie
         if(isset($_GET['actionResolue']) AND $_GET['actionResolue'] == true){
             $getSujet = $bdd->prepare("SELECT * FROM `sujet` 
             INNER JOIN `cat` ON `sujet`.`id_cat` = `cat`.`id` 
@@ -33,8 +34,7 @@
         ]);
         $nbRes = $getSujet->rowCount();
     } else {
-        echo "pas rentré";
-        // header("Location: index.php?action=home");
+        header("Location: index.php?action=home");
     }
 
     include('include/nav.php');
