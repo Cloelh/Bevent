@@ -2,7 +2,7 @@
 
 $host="localhost";
 
-$db="myForum";
+$db="musicOne";
 
 $user="root";
 
@@ -15,3 +15,4 @@ catch(Exception $e) {
     echo "Erreur : ".$e->getMessage()."<br />";
 }
 ?>
+    

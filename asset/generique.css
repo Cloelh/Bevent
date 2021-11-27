@@ -1,0 +1,59 @@
+
+/* initialize */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+ 
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin:0;
+}
+ 
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+	-o-appearance: none;
+	margin:0
+}
+
+.padding{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.padding-top{ padding-top: 100px;}
+.padding-bottom{ padding-bottom: 100px;}
+
+
+/* hauteur - largeur*/
+.h10 {height: 10vh;}
+.h80{ height: 80vh;}
+.h90{ height: 90vh;}
+.h100{ height: 100vh;}
+.hp100{ height: 100%;}
+
+.w50{width: 50%;}
+
+
+
+
+/* flex */
+.d-flex{display: flex;}
+.flex-row{flex-direction: row;}
+.flex-column{flex-direction: column;}
+.justify-content-start{justify-content: start;}
+.justify-content-end{justify-content: end;}
+.justify-content-center{justify-content: center;}
+.justify-content-between{justify-content: between;}
+.justify-content-around{justify-content: around;}
+.align-items-start{align-items: flex-start;}
+.align-items-end{align-items: flex-end;}
+.align-items-center{align-items: center;}

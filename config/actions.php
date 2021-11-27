@@ -5,31 +5,11 @@ $listeDesActions = array(
     //vues
     "" => "vues/home.php",
     "home" => "vues/home.php",
-    "connexion" => "vues/connexion.php",
-    "mySujet" => "vues/mySujet.php",
-    "myMessage" => "vues/myMessage.php",
-    "admin" => "vues/admin.php",
-    "createPost" => "vues/createPost.php",
-    "pageSujet" => "vues/pageSujet.php",
-    "pageCategorie" => "vues/pageCategorie.php",
-    "search" => "vues/search.php",
-    "readMessage" => "vues/readMessage.php",
+    "connexion" => "vues/connexion.php"
+
 
     //traitement
-    "register" => "traitement/register.php",
-    "login" => "traitement/login.php",
-    "logout" => "traitement/logout.php",
-    "newPost" => "traitement/newPost.php",    
-    "newCommentaire" => "traitement/newCommentaire.php",   
-    "deleteCom" => "traitement/deleteCom.php",
-    "deleteSujet" => "traitement/deleteSujet.php",
-    "deleteCat" => "traitement/deleteCat.php",
-    "addCat" => "traitement/addCat.php",
-    "deleteUser" => "traitement/deleteUser.php",
-    "postResolue" => "traitement/postResolue.php",
-    "changeAvatar" => "traitement/changeAvatar.php",
-    "sendMessage" => "traitement/sendMessage.php",
-    "sendReponse" => "traitement/sendReponse.php",
+
     
 )
 

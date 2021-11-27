@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 67">
-  <g id="Ellipse_2" data-name="Ellipse 2" fill="#fff" stroke="#4b36ac" stroke-width="1">
-    <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
-    <circle cx="33.5" cy="33.5" r="33" fill="none"/>
-  </g>
-  <path id="Intersection_1" data-name="Intersection 1" d="M10.531,57.194a11.819,11.819,0,0,1,11.156-7.915h5.085a16.065,16.065,0,0,0,13.457,0h5.086A11.819,11.819,0,0,1,56.47,57.194a33,33,0,0,1-45.939,0ZM20.21,33.035A13.291,13.291,0,1,1,33.5,46.326,13.293,13.293,0,0,1,20.21,33.035Z" transform="translate(0 0.5)" fill="#4a36ab"/>
-</svg>
